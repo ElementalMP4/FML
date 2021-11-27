@@ -1,0 +1,22 @@
+{
+    "name": "FML Inspirational Quote Demo",
+    "version": "1.0.0",
+    "intents": [{
+        "intent": "inspo",
+        "structures": [
+            "Never give up on [goal]",
+            "Search for the [thing]",
+            "To achieve [goal] you will need [thing]"
+        ],
+        "fillers": [
+            { "placeholder": "goal", "value": "yourself" },
+            { "placeholder": "goal", "value": "happiness" },
+            { "placeholder": "goal", "value": "your goals" },
+            { "placeholder": "goal", "value": "transcendence" },
+            { "placeholder": "thing", "value": "money" },
+            { "placeholder": "thing", "value": "good will" },
+            { "placeholder": "thing", "value": "dreams" },
+            { "placeholder": "thing", "value": "suffering" }
+        ]
+    }]
+}
