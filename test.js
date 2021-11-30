@@ -1,3 +1,4 @@
 const FML = require("./FML");
-FML.dataset("./inspiration.json");
-console.log(FML.generateResponse("inspo"));
+const responseGenerator = new FML("./inspiration.json");
+const response = responseGenerator.generateResponse("inspo");
+console.log(response);

@@ -3,24 +3,25 @@
 A very basic way of automatically generating responses based on pre-determined structures and keywords.
 FML is a good companion for NLP chatbots, allowing more dynamic responses to be generated.
 
-Currently, FML is only compatible with Node.JS
+Currently, FML is only compatible with Node.JS and requires no external libraries.
 
 Example FML file (example.json):
 ```json
 {
-    "name": "FML Example",
+    "name": "FML Inspirational Quote Demo",
     "version": "1.0.0",
     "intents": [{
-        "intent": "something",
+        "intent": "inspo",
         "structures": [
-            "A word: [word]",
-            "A number: [number]"
+            "Never give up on [goal]",
+            "Search for the [thing]",
+            "To achieve [goal] you will need [thing]"
         ],
         "fillers": [
-            { "placeholder": "word", "value": "Happiness" },
-            { "placeholder": "word", "value": "Avocadoes" },
-            { "placeholder": "number", "value": "69" },
-            { "placeholder": "number", "value": "420" }
+            { "placeholder": "goal", "value": "yourself" },
+            { "placeholder": "goal", "value": "happiness" },
+            { "placeholder": "thing", "value": "money" },
+            { "placeholder": "thing", "value": "good will" }
         ]
     }]
 }
@@ -32,8 +33,10 @@ Example FML file (example.json):
 
 Example JS file:
 ```js
-const FML = require("./FML");                       //Require the module
-FML.dataset("./example.json");                      //Set the dataset to be used (can be changed on-the-fly)
-var response = FML.generateResponse("something"));  //Get a randomly generated response for the intent 'something'
-console.log(response);                              //Show the response
+const FML = require("./FML");                                 //Import Dependency
+const responseGenerator = new FML("./inspiration.json");      //Instantiate FML with dataset "inspiration.json"
+const response = responseGenerator.generateResponse("inspo"); //Generate a response based on the intent "inspo"
+console.log(response);                                        //Output response
 ```
+
+Try the `test.js` file provided to see FML in action!
